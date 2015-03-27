@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @board.title
+%p
+  %b Content:
+  = @board.content
+%p
+  %b Date:
+  = @board.date
+%p
+  %b Place:
+  = @board.place
+%p
+  %b User:
+  = @board.user_id
+
+= link_to 'Edit', edit_board_path(@board)
+\|
+= link_to 'Back', boards_path

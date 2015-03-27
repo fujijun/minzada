@@ -1,0 +1,86 @@
+/ ----------header-start----------
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}
+        %img{:alt => "", :height => "20px", :src => "img/star-icon.png", :width => "20px"} Brand
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "meetings-index.html"}
+            Home
+            %span.sr-only (current)
+        %li
+          %a{:href => ""}
+        %li.dropdown
+      %form.navbar-form.navbar-left{:role => "search"}
+        .form-group
+          %input.form-control{:placeholder => "座談会を探そう！！", :type => "text"}
+        %button.btn.btn-default{:type => "submit"} Search
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "create.html"}
+            座談会を企画する
+            %span.caret
+        %li
+          %a{:href => "login.html"}
+            ログイン
+            %span.caret
+    / /.navbar-collapse
+  / /.container-fluid
+/ ----------header-end----------
+%h2 ログイン
+/ login-form start
+.container
+  .row
+    .admin-btn
+      %a{:href => "signup.html"}
+        %button.btn.btn-warning{:type => "submit"} 新規会員登録はこちら
+    .login.col-xs-6
+      %form.login-form
+        %h4.login-form-text メールアドレスを利用してログインする
+        %br
+          .login-text
+            %p
+              ※はじめての方はまず
+              %a{:href => "signup.html"}>
+                %strong 会員登録（無料）
+              をお願いします。会員登録にかかる時間は約１分です。
+          .form-group
+            %label{:for => "exampleInputEmail1"}
+              メールアドレス
+            %input#exampleInputEmail1.form-control{:placeholder => "Email address", :style => "background-color: #fffacd;", :type => "email"}
+          .form-group
+            %label{:for => "exampleInputPassword1"}
+              パスワード
+            %input#exampleInputPassword1.form-control{:placeholder => "Password", :style => "background-color: #fffacd;", :type => "password"}
+          <div class="checkbox" "content-align: center;">
+          %label
+            %input{:type => "checkbox"}
+              次回も自動ログインする
+    %button.btn.btn-default{:type => "submit"} ログイン
+  / -------SNS-login　--------
+  .sns-login.col-xs-6
+    %form.sns-login-form
+      %h4.sns-login-form-text> SNSでログイン
+      ※許可なくSNSに投稿されることはありません
+      %br
+        .sns-btn-relation
+          %button.btn.btn-primary{:type => "submit"} Facebookを利用してログインする
+        .login-check
+          .checkbox
+            %label
+              %input{:type => "checkbox"}
+                次回も自動ログインする
+/ login-form end
+.footer-text-end
+  %p.text-center COPY RIGHT All Right Reserved @ Casual Meeting
+
+
