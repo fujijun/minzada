@@ -1,0 +1,33 @@
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
+  .register-form
+    %h4 アカウントを登録して新しい出会いを！
+    .field
+      = f.label :Name
+      %br
+      = f.text_field :name, class: "form-control", placeholder: "名前"
+    .field
+      = f.label :University
+      %br
+      = f.text_field :university, class: "form-control", placeholder: "大学"
+    .field
+      = f.label :Major
+      %br
+      = f.text_field :major, class: "form-control", placeholder: "学部"
+    .field
+      = f.label :Email
+      %br
+      = f.text_field :address, class: "form-control", placeholder: "メールアドレス"
+    .field
+      = f.label :Career
+      %br
+      = f.text_area :career, class: "form-control", placeholder: "参加したインターン、留学経験、大学での実績などを記述して下さい。"
+    .actions
+      = f.submit

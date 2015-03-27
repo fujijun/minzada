@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @user.name
+%p
+  %strong University:
+  = @user.university
+%p
+  %strong Major:
+  = @user.major
+%p
+  %strong Address:
+  = @user.address
+%p
+  %strong Career:
+  = @user.career
+= link_to 'Edit', edit_user_path(@user)
+|
+\#{link_to 'Back', users_path}
