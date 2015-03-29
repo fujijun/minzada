@@ -1,4 +1,3 @@
-/ ----------header-start----------
 %nav.navbar.navbar-inverse.navbar-fixed-top
   .container-fluid
     / Brand and toggle get grouped for better mobile display
@@ -13,270 +12,119 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
+        %li.active{"font-color" => "black"}
           %a{:href => "meetings-index.html"}
             Home
             %span.sr-only (current)
-        %li
-          %a{:href => ""}
-        %li.dropdown
-      %form.navbar-form.navbar-left{:role => "search"}
-        .form-group
-          %input.form-control{:placeholder => "座談会を探そう！！", :type => "text"}
-        %button.btn.btn-default{:type => "submit"} Search
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href => "create.html"}
-            座談会を企画する
+          %a{:href => "#"}
+            ログイン
             %span.caret
         %li
-          %a{:href => "login.html"}
-            ログイン
+          %a{:href => "signup.html"}
+            新規登録
             %span.caret
     / /.navbar-collapse
   / /.container-fluid
-/ ----------header-end----------
 .top-head.table
   .table-cell
     .top-panel
       .panel-content
-        %h1 より良い未来を作りましょう！
+        %h1
+          %strong みんなの座談会
         %br
+          %h2 〜企業との新しい出会いの場を〜
+      .admin.table
+        .table-cell
+          .row
+            .col-xs-6
+              %a.btn.btn-primary.margin-left-10per{:href => "#"} Facebookで新規登録 / ログイン
+            .col-xs-6              
+              = link_to new_user_path, class: "btn btn-warning margin-right-10per" do
+                メールアドレスで新規登録
+            .col-xs-12
+              %p.admin-word.text-center みんなの座談会が許可なくSNSに投稿することはありません
+          .clear
       .common
         .raw
-          .col-xs-5
           .col-xs-2
-            %a.button2.btn-default{:href => "create.html"} 座談会を作る
-          .col-xs-5
-/ ---------- second-bar ----------------
-.second-bar
-  .container
-    .second-bar-content
-      %ul.inner.clearfix
-        %a.white.reverse.button{:href => "#"}
-          %li
-            %i.fa.fa-arrow-circle-right
-            新着順
-        %a.white.reverse.button{:href => "#"}
-          %li
-            %i.fa.fa-arrow-circle-right
-            人気順
-        %a.white.reverse.button{:href => "#"}
-          %li
-            %i.fa.fa-arrow-circle-right
-            締め切りが近い順
-        %a.white.reverse.button{:href => "#"}
-          %li
-            %i.fa.fa-arrow-circle-right
-            カテゴリから探す
+          .col-xs-8
+            = link_to login_login_path, class: "btn btn-success" do
+              すでにユーザーの方はこちら
+          .col-xs-2
 / ----------header-end----------
-/ ---------- 座談会一覧 ----------------
-.index
-  %h2 座談会一覧
+/ ----------３つのポイントで説明するやつ----------
+.content2
+  %h2 このサービスの3つの特徴
   .container
-    .index-boxies
-      .index-box
-        .row
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                    .box-inline-middle.number 14
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                    .box-inline-middle.number 14
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
-                    .box-inline-middle.number 14
-        .row
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
-                    .box-inline-middle.number 14
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
-                    .box-inline-middle.number 14
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
-                    .box-inline-middle.number 14
-        .row
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
-                    .box-inline-middle.number 14
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                    .box-inline-middle.number 14
-          .index-content.col-xs-4.sm-4.lg-6
-            .index-content-img
-              %a{:href => "detail.html"}
-                %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                  .index-content-states
-                    %span
-                      募集中
-                  .index-content-date
-                    %i.fa.fa-calendar.margin10-right.box-inline-middle
-                    %span.box-inline-middle
-                      2015.03.18 19:00-20:00
-              .index-content-summry
-                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                .count
-                  %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                    .box-inline-middle.number 14
-  .btn-line
-    %button.btn.btn-warning.button3{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-target" => "#collapseExample", "data-toggle" => "collapse", :type => "button"}
-      もっと見る
-  #collapseExample.collapse
-    .well
-      .container
-        .index-boxies
-          .index-box
-            .row
-              .index-content.col-xs-4.sm-4.lg-6
-                .index-content-img
-                  %a{:href => "detail.html"}
-                    %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                      .index-content-states
-                        %span
-                          募集中
-                      .index-content-date
-                        %i.fa.fa-calendar.margin10-right.box-inline-middle
-                        %span.box-inline-middle
-                          2015.03.18 19:00-20:00
-                  .index-content-summry
-                    %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                    .count
-                      %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                        .box-inline-middle.number 14
-              .index-content.col-xs-4.sm-4.lg-6
-                .index-content-img
-                  %a{:href => "detail.html"}
-                    %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                      .index-content-states
-                        %span
-                          募集中
-                      .index-content-date
-                        %i.fa.fa-calendar.margin10-right.box-inline-middle
-                        %span.box-inline-middle
-                          2015.03.18 19:00-20:00
-                  .index-content-summry
-                    %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                    .count
-                      %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                        .box-inline-middle.number 14
-              .index-content.col-xs-4.sm-4.lg-6
-                .index-content-img
-                  %a{:href => "detail.html"}
-                    %img.img-resoponsive{:alt => "", :src => "assets/img1.jpg"}
-                      .index-content-states
-                        %span
-                          募集中
-                      .index-content-date
-                        %i.fa.fa-calendar.margin10-right.box-inline-middle
-                        %span.box-inline-middle
-                          2015.03.18 19:00-20:00
-                  .index-content-summry
-                    %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
-                    .count
-                      %img.box-inline-middle{:alt => "", :src => "assets/userimage.png"}
-                        .box-inline-middle.number 14
+    .row
+      .col-xs-4
+        .lessons.thumbnail
+          .media
+            .media-left.media-middle
+              %img.img-circle{:alt => "", :src => "/assets/1426263378_406765.ico"}
+            .media-body.media-middle
+              %h3 無料で座談会の作成・参加ができます！
+          .point-text
+            無料で登録することが出来、
+            %br
+              学生側から企業に対して、
+              %br
+                イベントの申請が出来ます。
+      .col-xs-4
+        .lessons.thumbnail
+          .media
+            .media-left.media-middle
+              %img.img-circle{:alt => "", :src => "/assets/handshake-icon.png"}
+            .media-body.media-middle
+              %h3 よりフランクな場を提供します！
+          .point-text
+            座談会形式でフランクに
+            %br
+              お互いのことをお話し頂けます。
+      .col-xs-4
+        .lessons.thumbnail
+          .media
+            .media-left.media-middle
+              %img.img-circle{:alt => "", :src => "/assets/love.png"}
+            .media-body.media-middle
+              %h3 特別オファーもあるかも！
+          .point-text
+            優秀だと判断された人には
+            %br
+              特別な選考ルートやその場での
+              %br
+                内定も出る可能性があります。
+.content3
+  %h2 現状の就活ではこんな問題があります
+　　
+.top-head.table
+  .table-cell
+    .top-panel
+      .panel-content
+        %h1 自分の未来を作ろう！！
+        %br
+          %h2 〜企業との出会いをより良いものにしよう！〜
+      .admin.table
+        .table-cell
+          .row
+            .col-xs-6
+              %a.btn.btn-primary.margin-left-10per{:href => "#"} Facebookで新規登録 / ログイン
+            .col-xs-6
+              = link_to new_user_path, class: "btn btn-warning margin-right-10per" do
+                メールアドレスで新規登録
+            .col-xs-12
+              %p.admin-word.text-center カジュアルミーティングが許可なくSNSに投稿することはありません
+          .clear
+      .common
+        .raw
+          .col-xs-2
+          .col-xs-8
+            = link_to login_login_path, class: "btn btn-success" do
+              すでにユーザーの方はこちら
+          .col-xs-2
+/ ----------footer----------
+.footer
+  .footer-text-end
+    %p.text-center Copyright © 2015 みんなの座談会, ALL Rights Reserved.

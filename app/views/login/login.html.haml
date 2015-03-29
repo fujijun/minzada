@@ -36,21 +36,23 @@
     / /.navbar-collapse
   / /.container-fluid
 / ----------header-end----------
-%h2 ログイン
 / login-form start
-.container
+.container.login-content
   .row
-    .admin-btn
-      %a{:href => "signup.html"}
-        %button.btn.btn-warning{:type => "submit"} 新規会員登録はこちら
+    .login-head
+      %h2 ログイン
+      .admin-btn        
+        = link_to new_user_path do
+          %button.btn.btn-warning{:type => "submit"} 新規会員登録はこちら
+      .clear
     .login.col-xs-6
-      %form.login-form
+      #form.login-form
         %h4.login-form-text メールアドレスを利用してログインする
         %br
           .login-text
             %p
               ※はじめての方はまず
-              %a{:href => "signup.html"}>
+              = link_to new_user_path do
                 %strong 会員登録（無料）
               をお願いします。会員登録にかかる時間は約１分です。
           .form-group
@@ -60,25 +62,28 @@
           .form-group
             %label{:for => "exampleInputPassword1"}
               パスワード
-            %input#exampleInputPassword1.form-control{:placeholder => "Password", :style => "background-color: #fffacd;", :type => "password"}
-          <div class="checkbox" "content-align: center;">
-          %label
-            %input{:type => "checkbox"}
-              次回も自動ログインする
-    %button.btn.btn-default{:type => "submit"} ログイン
-  / -------SNS-login　--------
-  .sns-login.col-xs-6
-    %form.sns-login-form
-      %h4.sns-login-form-text> SNSでログイン
-      ※許可なくSNSに投稿されることはありません
-      %br
+            %input#exampleInputPassword1.form-control{:placeholder => "Password", :style => "background-color: #fffacd;", :type => "password"}          
+            .login-check
+              .checkbox
+                %label
+                  %input{:type => "checkbox"}
+                    次回も自動ログインする
+          %button.btn.btn-default{:type => "submit"} 
+            ログイン
+    / -------SNS-login　--------
+    .sns-login.col-xs-6
+      %form.sns-login-form
+        .login-form-head
+          %h4.sns-login-form-text.inline-block> SNSでログイン
+          .sub-text.inline-block
+            ※許可なくSNSに投稿されることはありません
         .sns-btn-relation
           %button.btn.btn-primary{:type => "submit"} Facebookを利用してログインする
-        .login-check
-          .checkbox
-            %label
-              %input{:type => "checkbox"}
-                次回も自動ログインする
+          .login-check
+            .checkbox
+              %label
+                %input{:type => "checkbox"}
+                  次回も自動ログインする
 / login-form end
 .footer-text-end
   %p.text-center COPY RIGHT All Right Reserved @ Casual Meeting
