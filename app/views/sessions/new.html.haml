@@ -18,11 +18,11 @@
             %span.sr-only (current)
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href => "#"}
+          = link_to login_login_path do
             ログイン
             %span.caret
         %li
-          %a{:href => "signup.html"}
+          = link_to new_user_path do
             新規登録
             %span.caret
     / /.navbar-collapse

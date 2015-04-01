@@ -26,11 +26,11 @@
         %button.btn.btn-default{:type => "submit"} Search
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href => "create.html"}
+          = link_to new_board_path do
             座談会を企画する
             %span.caret
         %li
-          %a{:href => "login.html"}
+          = link_to login_login_path do
             ログイン
             %span.caret
     / /.navbar-collapse
@@ -46,7 +46,8 @@
         .raw
           .col-xs-5
           .col-xs-2
-            %a.button2.btn-default{:href => "create.html"} 座談会を作る
+            = link_to new_board_path, class: "button2 btn-default" do
+              座談会を作る
           .col-xs-5
 / ---------- second-bar ----------------
 .second-bar

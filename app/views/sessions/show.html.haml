@@ -1,1 +1,154 @@
-show.html.haml
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}
+        %img{:alt => "", :height => "20px", :src => "img/star-icon.png", :width => "20px"} Brand
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "meetings-index.html"}
+            Home
+            %span.sr-only (current)
+        %li
+          %a{:href => ""}
+            %p
+        %li.dropdown
+      %form.navbar-form.navbar-left{:role => "search"}
+        .form-group
+          %input.form-control{:placeholder => "座談会を探そう！！", :type => "text"}
+        %button.btn.btn-default{:type => "submit"} Search
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "#"}
+            Login
+            %span.caret
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Dropdown
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#"} Action
+            %li
+              %a{:href => "#"} Another action
+            %li
+              %a{:href => "#"} Something else here
+            %li.divider
+            %li
+              %a{:href => "#"} Separated link
+    / /.navbar-collapse
+  / /.container-fluid
+/ ----------header-end----------
+.detail-content-img
+  %img{:alt => "", :height => "300px", :src => "/assets/img1.jpg", :width => "100%"}
+  .detail-content-states
+    %span
+      募集中
+/ -------profile-summry----------
+.content-about
+  .profile
+    .profile-pic
+      %img.img-circle.img-responsive{:alt => "", :src => "/assets/fujinuma2.jpg"}
+    .profile-name
+      Fujinuma Junya
+    .profile-favorite
+      .user-icon
+        %img{:alt => "", :src => "/assets/userimage.png"}
+        .user-num
+          20
+  .profile-under
+    .profile-text
+      簡単なプロフィール,大学で行っていること、インターン経験などなど１００文字程度ああああああああああああああああああああああああ
+  .join-btn-line
+    .join-btn
+      %button.btn.btn-primary{:style => "margin-top: 10px;", :type => "button"} 参加したい
+/ ----------切り替わるやつ----------
+.wrap
+  %ul#tabs.tabs
+    %li
+      %a{:href => "#"} ホーム
+    %li
+      %a{:href => "#"} 参加者のプロフィール
+    %li
+      %a{:href => "#"} 掲示板に書き込む
+  #tabPanes.tabPanes
+    %div
+      %p 日時
+      %hr{:style => "border-top: 2px dotted black;width: 90%;"}
+        %p 場所
+        %hr{:style => "border-top: 2px dotted black;width: 90%;"}
+          %p 座談会内容
+          %hr{:style => "border-top: 2px dotted black;width: 90%;"}
+    .participant
+      .participant-owner
+        .participant-owner-box
+          %p 企画者
+          %img.img-circle{:alt => "", :src => "/assets/fujinuma2.jpg"}
+            .participant-owner-name
+              Fujinuma Junya
+            .participant-owner-profile
+              簡単なプロフィール、大学でやっていること、インターンなどなど
+    %div
+      %p コメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入ります
+/ ----------レコメンド----------
+.index
+  %h2 座談会一覧
+  .container
+    .index-boxies
+      .index-box
+        .row
+          .index-content.col-xs-4.sm-4.lg-6
+            .index-content-img
+              %a{:href => "detail.html"}
+                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                .index-content-states
+                  %span
+                    募集中
+                .index-content-date
+                  %i.fa.fa-calendar.margin10-right.box-inline-middle
+                  %span.box-inline-middle
+                    2015.03.18 19:00-20:00
+              .index-content-summry
+                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                .count
+                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                    .box-inline-middle.number 14
+          .index-content.col-xs-4.sm-4.lg-6
+            .index-content-img
+              %a{:href => "detail.html"}
+                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                  .index-content-states
+                    %span
+                      募集中
+                  .index-content-date
+                    %i.fa.fa-calendar.margin10-right.box-inline-middle
+                    %span.box-inline-middle
+                      2015.03.18 19:00-20:00
+              .index-content-summry
+                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                .count
+                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                    .box-inline-middle.number 14
+          .index-content.col-xs-4.sm-4.lg-6
+            .index-content-img
+              %a{:href => "detail.html"}
+                %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                  .index-content-states
+                    %span
+                      募集中
+                  .index-content-date
+                    %i.fa.fa-calendar.margin10-right.box-inline-middle
+                    %span.box-inline-middle
+                      2015.03.18 19:00-20:00
+              .index-content-summry
+                %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                .count
+                  %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                    .box-inline-middle.number 14
