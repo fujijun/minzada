@@ -54,49 +54,90 @@
 / -------profile-summry----------
 .content-about
   .profile
-    .profile-pic
-      %img.img-circle.img-responsive{:alt => "", :src => "/assets/fujinuma2.jpg"}
-    .profile-name
-      Fujinuma Junya
-    .profile-favorite
-      .user-icon
-        %img{:alt => "", :src => "/assets/userimage.png"}
-        .user-num
+    .profile-pic.float-left
+      %img.img-circle.img-responsive.inline-block.middle{:alt => "", :src => "/assets/fujinuma2.jpg"}
+      .profile-name.inline-block.middle
+        Fujinuma Junya
+    .profile-favorite.float-right.table
+      .user-icon.table-cell.middle
+        %img.inline-block.middle{:alt => "", :src => "/assets/userimage.png"}
+        .user-num.inline-block.middle
           20
+    .clear
   .profile-under
     .profile-text
-      簡単なプロフィール,大学で行っていること、インターン経験などなど１００文字程度ああああああああああああああああああああああああ
+      .date-place
+        %strong [日時] 
+        4月23日　16:00-17:30　
+        %strong [場所]　
+        東京大学食堂
+      .explanation
+        %strong [内容]　
+        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
   .join-btn-line
     .join-btn
       %button.btn.btn-primary{:style => "margin-top: 10px;", :type => "button"} 参加したい
 / ----------切り替わるやつ----------
-.wrap
-  %ul#tabs.tabs
-    %li
-      %a{:href => "#"} ホーム
-    %li
-      %a{:href => "#"} 参加者のプロフィール
-    %li
-      %a{:href => "#"} 掲示板に書き込む
-  #tabPanes.tabPanes
-    %div
-      %p 日時
+#myTab{:role => "tabpanel"}
+  / Nav tabs
+  %ul.nav.nav-tabs{:role => "tablist"}
+    %li.active{:role => "presentation"}
+      %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#home", :role => "tab"} ホーム
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"} 参加者のプロフィール
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#messages", :role => "tab"} 掲示板
+  .tab-content
+    #home.tab-pane.active{:role => "tabpanel"}
+      %p
+        日時
       %hr{:style => "border-top: 2px dotted black;width: 90%;"}
-        %p 場所
+        %p
+          場所
         %hr{:style => "border-top: 2px dotted black;width: 90%;"}
-          %p 座談会内容
+          %p
+            座談会内容
           %hr{:style => "border-top: 2px dotted black;width: 90%;"}
-    .participant
-      .participant-owner
-        .participant-owner-box
-          %p 企画者
-          %img.img-circle{:alt => "", :src => "/assets/fujinuma2.jpg"}
-            .participant-owner-name
-              Fujinuma Junya
-            .participant-owner-profile
-              簡単なプロフィール、大学でやっていること、インターンなどなど
-    %div
-      %p コメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入りますコメントのテキストが入ります
+    #profile.tab-pane{:role => "tabpanel"}
+      .participant
+        .participant-owner
+          .participant-owner-box
+            %p 企画者
+            %img.img-circle{:alt => "", :src => "/assets/fujinuma2.jpg"}
+            .participant-owner-content
+              .participant-owner-name
+                Fujinuma Junya
+              .participant-owner-profile
+                【参加インターン】じげん、ビズリーチ、DeNA、第一生命
+      %hr{:style => "border-top: 2px dotted black;width: 90%;"}
+      .participant
+        .participant-owner
+          .participant-owner-box
+            %p 参加者
+            %img.img-circle{:alt => "", :src => "/assets/fujinuma2.jpg"}
+            .participant-owner-content
+              .participant-owner-name
+                Fujinuma Junya
+              .participant-owner-profile
+                【参加インターン】じげん、ビズリーチ、DeNA、第一生命
+      .participant
+        .participant-owner
+          .participant-owner-box
+            %p 参加者
+            %img.img-circle{:alt => "", :src => "/assets/fujinuma2.jpg"}
+            .participant-owner-content
+              .participant-owner-name
+                Fujinuma Junya
+              .participant-owner-profile
+                【参加インターン】じげん、ビズリーチ、DeNA、第一生命
+    #messages.tab-pane{:role => "tabpanel"}
+      こんばんは
+    /
+:javascript
+    $('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+  })
 / ----------レコメンド----------
 .index
   %h2 座談会一覧
