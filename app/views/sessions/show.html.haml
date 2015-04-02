@@ -1,3 +1,4 @@
+/ ----------header-start----------
 %nav.navbar.navbar-inverse.navbar-fixed-top
   .container-fluid
     / Brand and toggle get grouped for better mobile display
@@ -18,7 +19,6 @@
             %span.sr-only (current)
         %li
           %a{:href => ""}
-            %p
         %li.dropdown
       %form.navbar-form.navbar-left{:role => "search"}
         .form-group
@@ -26,23 +26,13 @@
         %button.btn.btn-default{:type => "submit"} Search
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href => "#"}
-            Login
+          = link_to new_board_path do
+            座談会を企画する
             %span.caret
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Dropdown
+        %li
+          = link_to login_login_path do
+            ログイン
             %span.caret
-          %ul.dropdown-menu{:role => "menu"}
-            %li
-              %a{:href => "#"} Action
-            %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
-            %li.divider
-            %li
-              %a{:href => "#"} Separated link
     / /.navbar-collapse
   / /.container-fluid
 / ----------header-end----------
@@ -67,12 +57,12 @@
   .profile-under
     .profile-text
       .date-place
-        %strong [日時] 
+        %strong 【日時】
         4月23日　16:00-17:30　
-        %strong [場所]　
+        %strong 【場所】　
         東京大学食堂
       .explanation
-        %strong [内容]　
+        %strong 【内容】
         テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
   .join-btn-line
     .join-btn
@@ -89,15 +79,15 @@
       %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#messages", :role => "tab"} 掲示板
   .tab-content
     #home.tab-pane.active{:role => "tabpanel"}
-      %p
-        日時
+      .date-place
+        %strong　【日時】
       %hr{:style => "border-top: 2px dotted black;width: 90%;"}
-        %p
-          場所
+      .date-place
+      %strong　【場所】
+      %hr{:style => "border-top: 2px dotted black;width: 90%;"}
+      .date-place
+        %strong　【座談会内容】
         %hr{:style => "border-top: 2px dotted black;width: 90%;"}
-          %p
-            座談会内容
-          %hr{:style => "border-top: 2px dotted black;width: 90%;"}
     #profile.tab-pane{:role => "tabpanel"}
       .participant
         .participant-owner
